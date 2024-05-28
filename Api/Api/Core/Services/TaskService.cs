@@ -10,7 +10,7 @@ namespace Api.Core.Services
 	{
 		private readonly ITaskRepository _taskRepository;
 
-		public TaskService(TaskRepository taskRepository) 
+		public TaskService(ITaskRepository taskRepository) 
 		{
 			_taskRepository = taskRepository;
 		}

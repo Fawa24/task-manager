@@ -1,7 +1,29 @@
 <div class="card text-bg-secondary mb-3" style="max-width: 17rem;">
-    <div class="card-header">Header</div>
+
+    <div class="card-header">
+      <h5>{{this.taskCard.Name}}</h5>
+    </div>
+
     <div class="card-body">
-      <h5 class="card-title">Secondary card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+      <p class="card-text">{{this.taskCard.Description}}</p>
+
+      <div style="display: flex;">
+        <svg width="1.5em" height="1.5em" fill="currentColor" style="margin-right: 7px;" class="bi bi-calendar" viewBox="0 0 16 16">
+          <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+          <path d="M1 3h14V2a1 1 0 0 0-1-1h-1v.5a.5.5 0 0 1-1 0V1H4v.5a.5.5 0 0 1-1 0V1H2a1 1 0 0 0-1 1v1z"/>
+        </svg>
+        <p>{{taskCard.DueDate.toDateString()}}</p>        
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" style="width: 180px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor=""><a class="dropdown-item">Action</a></li>
+        </ul>
+      </div>
+
     </div>
 </div>

@@ -1,0 +1,16 @@
+.scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of child elements */
+  }
+  
+  .column {
+    display: inline-block; /* Ensures columns are displayed inline */
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc; /* Optional styling for columns */
+    width: 200px; /* Minimum width for columns */
+    text-align: center; /* Center-align text within columns */
+    background-color: #f9f9f9; /* Background color for columns */
+  }
+  

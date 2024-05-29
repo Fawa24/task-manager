@@ -1,4 +1,5 @@
-﻿using Api.Core.DTO;
+﻿using Api.Core.Domain.Entities;
+using Api.Core.DTO;
 using Api.Core.ServiceContracts;
 using Api.Core.Services;
 using Microsoft.AspNetCore.Http;
@@ -54,5 +55,12 @@ namespace Api
 
 			return NoContent();
 		}
+
+			[HttpGet("/lists")]
+			public async Task<ActionResult<List<TaskListResponce>>> GetAllLists()
+			{
+				List<TaskListResponce> list = await _taskService.GetAllTaskListsAsync();
+				return list;
+			}
 	}
 }

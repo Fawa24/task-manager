@@ -1,4 +1,5 @@
-﻿using Api.Core.DTO;
+﻿using Api.Core.Domain.Entities;
+using Api.Core.DTO;
 
 namespace Api.Core.ServiceContracts
 {
@@ -42,5 +43,10 @@ namespace Api.Core.ServiceContracts
 		/// <param name="id">Id of the card we want to get</param>
 		/// <returns>Matches card in the form of TaskCardResponce</returns>
 		public Task<TaskCardResponce> GetCardByIdAsync(Guid id);
+		/// <summary>
+		/// Returns all the task lists
+		/// </summary>
+		/// <returns>Task lists in the form of TaskListResponce</returns>
+		public Task<List<TaskListResponce>> GetAllTaskListsAsync();
 	}
 }

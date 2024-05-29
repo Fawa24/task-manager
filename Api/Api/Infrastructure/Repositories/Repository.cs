@@ -35,7 +35,12 @@ namespace Api.Infrastructure.Repositories
             return true;
         }
 
-        public async Task<List<TaskCard>> GetAllTasksAsync()
+		public async Task<List<TaskList>> GetAllTaskListsAsync()
+		{
+			return await _db.TaskLists.Include(nameof(TaskList.TaskCards)).ToListAsync();
+		}
+
+		public async Task<List<TaskCard>> GetAllTasksAsync()
         {
             return await _db.TaskCards.ToListAsync();
         }

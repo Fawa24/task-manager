@@ -38,6 +38,11 @@ namespace Api.Core.Services
 			return updatedCard;
 		}
 
+		public async Task<List<TaskListResponce>> GetAllTaskListsAsync()
+		{
+			return (await _taskRepository.GetAllTaskListsAsync()).Select(list => list.ToTaskListResponce()).ToList();
+		}
+
 		public async Task<TaskCardResponce> GetCardByIdAsync(Guid id)
 		{
 			TaskCardResponce matchedCard = (await _taskRepository.GetTaskByIdAsync(id)).ToTaskCardResponce();

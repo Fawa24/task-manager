@@ -1,4 +1,5 @@
 ﻿using Api.Core.Domain.Entities;
+using Api.Core.DTO;
 
 namespace Api.Core.Domain.RepositoryContracts
 {
@@ -47,5 +48,11 @@ namespace Api.Core.Domain.RepositoryContracts
 		/// <param name="taskCard">Task object to update</param>
 		/// <returns>Updated task</returns>
 		public Task<TaskCard> UpdateTaskAsync(TaskCard taskCard);
+
+		/// <summary>
+		/// Returns all the task lists
+		/// </summary>
+		/// <returns>Task lists in the form of TaskListResponce</returns>
+		public Task<List<TaskList>> GetAllTaskListsAsync();
 	}
 }
